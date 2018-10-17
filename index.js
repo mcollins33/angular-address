@@ -1,7 +1,6 @@
 (function(angular) {
     'use strict';
-    angular.module('myApp', []).config(function($interpolateProvider){           
- $interpolateProvider.startSymbol('{[{').endSymbol('}]}')
+    angular.module('myApp', [])
         .controller('addressController', function($scope) {
 
             $scope.customers = [{
