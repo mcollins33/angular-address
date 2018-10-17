@@ -1,10 +1,11 @@
 (function(angular) {
     'use strict';
-    angular.module('myApp', [])
+    angular.module('myApp', []).config(function($interpolateProvider){           
+ $interpolateProvider.startSymbol('{[{').endSymbol('}]}')
         .controller('addressController', function($scope) {
 
             $scope.customers = [{
-                    CustomerID: "ALFKI",
+                    "CustomerID": "ALFKI",
                     "CompanyName": "Alfreds Futterkiste",
                     "ContactName": "Maria Anders",
                     "ContactTitle": "Sales Representative",
@@ -17,7 +18,7 @@
                     "Fax": "030-0076545"
                 },
                 {
-                    CustomerID: "ANATR",
+                    "CustomerID": "ANATR",
                     "CompanyName": "Ana Trujillo Emparedados y helados",
                     "ContactName": "Ana Trujillo",
                     "ContactTitle": "Owner",
