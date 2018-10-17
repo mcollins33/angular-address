@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Address Book</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Telex" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Euphoria+Script" rel="stylesheet">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <header><a href="#cardView">Card View</a><a href="#tableView">Table View</a></header>
+    <div class="row" ng-controller="addressController">
+        <section class="col-12" id="cardView">
+            <h1>Business Cards</h1>
+            <div align="center" class="line"></div>
+            <div ng-repeat="customer in customers">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-1">
+                            <img class="logo" src="logo.jpg">
+                        </div>
+                        <div class="col-2">
+                            <p class="right bigText">{{customer.ContactName}}</p>
+                            <p class="right">{{customer.CompanyName}}</p>
+                            <p class="right">{{customer.ContactTitle}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p>P: {{customer.Phone}}</p>
+                            <p>F: {{customer.Fax}}</p>
+                        </div>
+                        <div class="col-4">
+                            <p class="right">{{customer.Address}}</p>
+                            <p class="right">{{customer.City}}, {{customer.Country}} {{customer.PostalCode}}</p>
+                            <p class="right">{{customer.Email}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="col-12" id="tableView">
+            <h1>Customer Information Table</h1>
+            <div align="center" class="line"></div>
+            <table>
+                <tr>
+                    <th>Contact</th>
+                    <th>Company</th>
+                    <th>Title</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                </tr>
+                <tr ng-repeat="customer in customers">
+                    <td>{{customer.ContactName}}</td>
+                    <td>{{customer.CompanyName}}</td>
+                    <td>{{customer.ContactTitle}}</td>
+                    <td>{{customer.Phone}}</td>
+                    <td>{{customer.Email}}</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
